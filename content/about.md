@@ -6,6 +6,8 @@ Welcome! I’m a passionate about cybersecurity and malware research. I created 
 
 ## Let's Connect
 
+---
+
 Feel free to reach out or explore more:
 
 - [Twitter](https://x.com/8erg_)
