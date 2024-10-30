@@ -10,7 +10,7 @@ paginate     = 10
   showLanguageSelector = false
   enableSharingButtons = true
   images = [""]
-  homeSubtitle = "Malware Research and more"
+  homeSubtitle = "Malware Research & more"
   
   portrait = { path = "/images/logoTwitter.png", alt = "My Portrait", maxWidth = "auto" }
 
