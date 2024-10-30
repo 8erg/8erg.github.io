@@ -17,6 +17,9 @@ paginate     = 10
 [[params.social]]
   name = "twitter"
   url = "https://x.com/8erg_"
+[[params.social]]
+  name = "/images/logoTwitter.png"
+  url = "https://malware-chronicles.beehiiv.com/"
 
 [languages]
   [languages.en]
