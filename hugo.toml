@@ -11,6 +11,7 @@ paginate     = 10
   enableSharingButtons = true
   images = [""]
   homeSubtitle = "Malware Research & more"
+  customCSS = ["/css/custom.css"]
   
   portrait = { path = "/images/logoTwitter.png", alt = "My Portrait", maxWidth = "auto" }
 
