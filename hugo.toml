@@ -43,7 +43,12 @@ paginate     = 10
     # alt = "Your example logo alt text"
 
   # And you can even create generic menu
-  [[menu.main]]
-    identifier = "Posts"
-    name       = "Posts"
-    url        = "/posts"
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about"
+      [[languages.en.menu.main]]
+	      identifier = "Posts"
+	      name = "Posts"
+	      url = "/posts"
