@@ -11,6 +11,5 @@ Feel free to reach out or explore more:
 - [Twitter](https://x.com/8erg_)
 - [Newsletter - Malware Chronicles](https://malware-chronicles.beehiiv.com/)
 
----
 
 
