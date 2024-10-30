@@ -1,7 +1,6 @@
 ---
 title: "About Me"
 description: "Learn more about the person behind the blog."
-date: 2024-10-29
 ---
 
 # About Me
