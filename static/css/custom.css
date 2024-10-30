@@ -5,6 +5,11 @@
     text-align: justify;
 }
 
+.justified-content {
+    text-align: justify;
+    line-height: 1.8;
+}
+
 h1, h2 {
     text-align: center;
     margin-bottom: 1rem;
