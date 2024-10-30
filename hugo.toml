@@ -1,0 +1,49 @@
+baseURL = '/'
+languageCode = 'en-us'
+title = 'Cybersecurity Research Blog'
+theme = 'hello-friend-ng'
+paginate     = 10
+
+[params]
+  # Subtitle for home
+  contentTypeName = "posts"
+  showLanguageSelector = false
+  enableSharingButtons = true
+  images = [""]
+  homeSubtitle = "Malware Research and more"
+  
+  portrait = { path = "/images/logoTwitter.png", alt = "My Portrait", maxWidth = "auto" }
+
+[[params.social]]
+  name = "twitter"
+  url = "https://x.com/8erg_"
+
+[languages]
+  [languages.en]
+    title = "Cybesecurity Research Blog "
+    owner = ""
+    keywords = ""
+    copyright = ""
+    menuMore = "Show more"
+    readMore = "Read more"
+    readOtherPosts = "Read other posts"
+    newerPosts = "Newer posts"
+    olderPosts = "Older posts"
+    missingContentMessage = "Page not found..."
+    missingBackButtonLabel = "Back to home page"
+    minuteReadingTime = "min read"
+    words = "words"
+
+    [languages.en.params.logo]
+      logoText = "8erg's Blog"
+      logoHomeLink = "/"
+    # or
+    #
+    # path = "/img/your-example-logo.svg"
+    # alt = "Your example logo alt text"
+
+  # And you can even create generic menu
+  [[menu.main]]
+    identifier = "Posts"
+    name       = "Posts"
+    url        = "/posts"

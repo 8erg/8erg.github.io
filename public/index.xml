@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cybesecurity Research Blog </title>
+    <link>//localhost:1313/</link>
+    <description>Recent content on Cybesecurity Research Blog </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 08 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Analyzing EarlyBird Injection Malware</title>
+      <link>//localhost:1313/posts/2024-10-08-analyzing-earlybird-injection-malware/</link>
+      <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2024-10-08-analyzing-earlybird-injection-malware/</guid>
+      <description>&lt;h3 id=&#34;preface&#34;&gt;Preface&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;⚠️ | Warning the following part contains a heavy dose of ChatGPT usage&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Imagine a cunning intruder, slipping through a barely-opened door before anyone even notices. This is how EarlyBird injection malware operates, sneaking into the system during a tiny, often overlooked moment—the startup of a process. Before security defenses fully spring to life, EarlyBird injects its malicious code, embedding itself in the memory space of legitimate processes.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IcedID - Analyzing Second Stage Loader</title>
+      <link>//localhost:1313/posts/2024-07-22-reversing-second-stage-loader/</link>
+      <pubDate>Mon, 22 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2024-07-22-reversing-second-stage-loader/</guid>
+      <description>&lt;h3 id=&#34;preface&#34;&gt;Preface&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;In the ever-evolving landscape of cyber threats, the IcedID loader stands out as a formidable banking Trojan with sophisticated capabilities. Originally known for its role as a banking malware, IcedID has grown to serve as a versatile loader for deploying additional malicious payloads. This analysis delves into the intricate mechanisms of IcedID, from its initial delivery through phishing or exploit kits, to its operational intricacies and data exfiltration methods.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>WannaCry - Analyzing Initial Stage</title>
+      <link>//localhost:1313/posts/2024-07-16-reverse-engineering-wannacry-initial-stage/</link>
+      <pubDate>Tue, 16 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2024-07-16-reverse-engineering-wannacry-initial-stage/</guid>
+      <description>&lt;h3 id=&#34;preface&#34;&gt;Preface&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;In the early summer of 2017, WannaCry was unleashed on the world. Widely considered to be one of the most devastating malware infections to date, WannaCry left a trail of destruction in its wake.&#xA;WannaCry is a classic ransomware sample; more specifically, it is a ransomware crypto worm, which means that it can encrypt individual hosts and had the capability to propagate through a network on its own.&#xA;Here’s my own analysis of this particular specimen.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
