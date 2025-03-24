@@ -6,8 +6,15 @@
     <description>Recent content on Cybesecurity Research Blog </description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 08 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 04 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Agent Tesla - Reverse Engineering Spyware</title>
+      <link>//localhost:1313/posts/2024-11-04-reverse-engineering-agent-tesla-spyware/</link>
+      <pubDate>Mon, 04 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/2024-11-04-reverse-engineering-agent-tesla-spyware/</guid>
+      <description>&lt;h2 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h2&gt;&#xA;&lt;hr&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;&lt;strong&gt;Section&lt;/strong&gt;&lt;/th&gt;&#xA;          &lt;th&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Preface&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;An introduction to the context and purpose of the analysis, including tools and objectives.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Basic Static &amp;amp; Dynamic Analysis&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Initial inspection of the binary, such as examining file metadata, strings, and imports to gather a high-level understanding.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Advanced Static Analysis&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;In-depth dissection of the binary, including reverse engineering with disassemblers, examining code flow, and detecting obfuscation techniques.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Conclusion&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;A summary of findings, including identified indicators of compromise (IOCs), behaviors, and next steps for further analysis.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h3 id=&#34;preface&#34;&gt;Preface&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Agent Tesla a Spyware acting as a game and stealing credentials. This sample is packed and has to be unpacked first in order to see the content. Uts&amp;rsquo;s malware developped in C#&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Analyzing EarlyBird Injection Malware</title>
       <link>//localhost:1313/posts/2024-10-08-analyzing-earlybird-injection-malware/</link>
@@ -35,13 +42,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/about/</guid>
       <description>&lt;h1 id=&#34;about-me&#34;&gt;About Me&lt;/h1&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Welcome! I’m a passionate about cybersecurity and malware research. I created this space to share my journey, insights, and discoveries in the field of malware analysis, exploit development, and vulnerability research. I will also post from time to time projects related to various other cyberscurity fields. What can I say I follow my curiosity&lt;/p&gt;&#xA;&lt;h2 id=&#34;lets-connect&#34;&gt;Let&amp;rsquo;s Connect&lt;/h2&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Feel free to reach out or explore more:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://x.com/8erg_&#34;&gt;Twitter&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://malware-chronicles.beehiiv.com/&#34;&gt;Newsletter - Malware Chronicles&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>//localhost:1313/posts/2024-09-04-reverse-engineering-agent-tesla-spyware/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/2024-09-04-reverse-engineering-agent-tesla-spyware/</guid>
-      <description>&lt;h2 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h2&gt;&#xA;&lt;hr&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;&lt;strong&gt;Section&lt;/strong&gt;&lt;/th&gt;&#xA;          &lt;th&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Preface&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;An introduction to the context and purpose of the analysis, including tools and objectives.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Basic Static &amp;amp; Dynamic Analysis&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;Initial inspection of the binary, such as examining file metadata, strings, and imports to gather a high-level understanding.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Advanced Static Analysis&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;In-depth dissection of the binary, including reverse engineering with disassemblers, examining code flow, and detecting obfuscation techniques.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;Conclusion&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;A summary of findings, including identified indicators of compromise (IOCs), behaviors, and next steps for further analysis.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h3 id=&#34;preface&#34;&gt;Preface&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Agent Tesla a Spyware acting as a game and stealing credentials. This sample is packed and has to be unpacked first in order to see the content. Uts&amp;rsquo;s malware developped in C#&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

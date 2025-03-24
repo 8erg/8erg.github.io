@@ -1,4 +1,8 @@
-
++++
+title = 'Agent Tesla - Reverse Engineering Spyware'
+date = 2024-11-04
+draft = false
++++
 
 ## Table of Contents
 --- 
@@ -64,9 +68,26 @@ In this section I used a simple tool named `pe studio` to get a general understa
 ### Rules & Signatures
 ---
 
+```
+rule Agent_Tesla { 
+    meta: 
+        last_updated = "2024-09-04"
+        author = "8erg"
+        description = "Yara detection rule for Spyware Agent Tesla"
 
+    strings:
+        $exe_name = "PHjZfdZvEt.exe" 
+
+    condition:
+        $exe_name
+}
+```
 
 
 ### Conclusion
 --- 
 
+I really enjoyed this one, it was my first time analyzing a spyware.
+I was able to understand a recurrent feature with some malware that creates a child process.
+Might do some more spyware, maybe some on android to see the differences.
+Well, until next time!
