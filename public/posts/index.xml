@@ -778,5 +778,143 @@ Hope you will enjoy this!!</p>
 ]]></content>
         </item>
         
+        <item>
+            <title></title>
+            <link>//localhost:1313/posts/2024-09-04-reverse-engineering-agent-tesla-spyware/</link>
+            <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+            
+            <guid>//localhost:1313/posts/2024-09-04-reverse-engineering-agent-tesla-spyware/</guid>
+            <description>&lt;h2 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h2&gt;
+&lt;hr&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;strong&gt;Section&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Preface&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;An introduction to the context and purpose of the analysis, including tools and objectives.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Basic Static &amp;amp; Dynamic Analysis&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Initial inspection of the binary, such as examining file metadata, strings, and imports to gather a high-level understanding.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Advanced Static Analysis&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;In-depth dissection of the binary, including reverse engineering with disassemblers, examining code flow, and detecting obfuscation techniques.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Conclusion&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;A summary of findings, including identified indicators of compromise (IOCs), behaviors, and next steps for further analysis.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;preface&#34;&gt;Preface&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;Agent Tesla a Spyware acting as a game and stealing credentials. This sample is packed and has to be unpacked first in order to see the content. Uts&amp;rsquo;s malware developped in C#&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<h2 id="table-of-contents">Table of Contents</h2>
+<hr>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Section</strong></th>
+          <th><strong>Description</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Preface</strong></td>
+          <td>An introduction to the context and purpose of the analysis, including tools and objectives.</td>
+      </tr>
+      <tr>
+          <td><strong>Basic Static &amp; Dynamic Analysis</strong></td>
+          <td>Initial inspection of the binary, such as examining file metadata, strings, and imports to gather a high-level understanding.</td>
+      </tr>
+      <tr>
+          <td><strong>Advanced Static Analysis</strong></td>
+          <td>In-depth dissection of the binary, including reverse engineering with disassemblers, examining code flow, and detecting obfuscation techniques.</td>
+      </tr>
+      <tr>
+          <td><strong>Conclusion</strong></td>
+          <td>A summary of findings, including identified indicators of compromise (IOCs), behaviors, and next steps for further analysis.</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="preface">Preface</h3>
+<hr>
+<p>Agent Tesla a Spyware acting as a game and stealing credentials. This sample is packed and has to be unpacked first in order to see the content. Uts&rsquo;s malware developped in C#</p>
+<h3 id="analysis">Analysis</h3>
+<hr>
+<p>In this section I used a simple tool named <code>pe studio</code> to get a general understanding of the loader.</p>
+
+    <img src="/images/Pasted%20image%2020241215001442.png"  alt="20240813093757"  class="center"  style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto"  />
+
+
+
+    <img src="/images/Pasted%20image%2020241215002133.png"  alt="20240813093757"  class="center"  style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto"  />
+
+
+<ul>
+<li>We can see that that this sample has probably been written in <code>C#</code> and we can see that it&rsquo;s trying to make us believe that it&rsquo;s a game by the description <code>Diablo 3</code>, I don&rsquo;t play video games but i heard about that particular video game</li>
+<li>There&rsquo;s high entropy being detected, so it&rsquo;s probably packed</li>
+</ul>
+<p><em>To Unpack it I used <code>x32dbg</code> and I put a breakpoint on <code>WriteProcessMemory</code></em></p>
+<ul>
+<li>So <code>agent tesla</code> will decrypt the encrypted payload into the memory then it will create the agent process and then dump the unpacked data in the child process</li>
+</ul>
+
+    <img src="/images/Pasted%20image%2020241215230050.png"  alt="20241215230050"  class="center"  style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto"  />
+
+
+
+    <img src="/images/Pasted%20image%2020241215230930.png"  alt="20241215230930"  class="center"  style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto"  />
+
+
+<blockquote>
+<p>[!info] When a malware create a child process, go to <code>WriteProcessMemory</code> to quickly get the unpacked executable</p>
+</blockquote>
+<ul>
+<li>As you can see in the debugger, by hitting the breakpoint on <code>WriteProcessMemory</code> we can find the unpacked executable by following the third argument address in the dump. Some of you will probably ask me why, go to the third argument, well simply because on the documentation we can see that third argument of <code>WriteProcessMemory</code> contains the <code>lpBuffer</code> which is a pointer to the buffer, which in our case represent the unpacked executable that is written in the sub-process that has been created by <code>agent tesla</code>.</li>
+</ul>
+
+    <img src="/images/Pasted%20image%2020241215232905.png"  alt="20241215232905"  class="center"  style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto"  />
+
+
+<ul>
+<li>Based on these strings we can definitely conclude that we&rsquo;re dealing with an Info Stealer</li>
+</ul>
+
+    <img src="/images/Pasted%20image%2020241215234858.png"  alt="20241215234858"  class="center"  style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto"  />
+
+
+<ul>
+<li>I&rsquo;ve put the unpacked executable inside the tool <code>Simple Assembly Explorer</code> in order to cleaned up most of the obfuscated strings, to ease up my analysis of the program code</li>
+</ul>
+<p>
+    <img src="/images/Pasted%20image%2020241216001630.png"  alt="20241216001630"  class="center"  style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto"  />
+
+
+
+    <img src="/images/Pasted%20image%2020241216001831.png"  alt="20241216001831"  class="center"  style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto"  />
+
+</p>
+<ul>
+<li>By Monitoring the <code>RegSvcs.exe</code> process we can see that there&rsquo;s a lot of operations being performed on my google chrome credentials</li>
+<li>We can see it goes on Edge too</li>
+</ul>
+
+    <img src="/images/Pasted%20image%2020241216213452.png"  alt="20241216213452"  class="center"  style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto"  />
+
+
+<h3 id="rules--signatures">Rules &amp; Signatures</h3>
+<hr>
+<h3 id="conclusion">Conclusion</h3>
+<hr>
+]]></content>
+        </item>
+        
     </channel>
 </rss>
