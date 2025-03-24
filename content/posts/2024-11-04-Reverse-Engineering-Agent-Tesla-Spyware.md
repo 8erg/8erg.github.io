@@ -8,12 +8,11 @@ draft = false
 --- 
 
 
-| **Section**                         | **Description**                                                                                                                                 |
-| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Preface**                         | An introduction to the context and purpose of the analysis, including tools and objectives.                                                     |
-| **Basic Static & Dynamic Analysis** | Initial inspection of the binary, such as examining file metadata, strings, and imports to gather a high-level understanding.                   |
-| **Advanced Static Analysis**        | In-depth dissection of the binary, including reverse engineering with disassemblers, examining code flow, and detecting obfuscation techniques. |
-| **Conclusion**                      | A summary of findings, including identified indicators of compromise (IOCs), behaviors, and next steps for further analysis.                    |
+| **Section**    | **Description**                                                                                                                                                                                                                                                               |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Preface**    | An introduction to the context and purpose of the analysis, including tools and objectives.                                                                                                                                                                                   |
+| **Analysis**   | Initial inspection of the binary, such as examining file metadata, strings, and imports to gather a high-level understanding. In-depth dissection of the binary, including reverse engineering with disassemblers, examining code flow, and detecting obfuscation techniques. |
+| **Conclusion** | A summary of findings, including identified indicators of compromise (IOCs), behaviors, and next steps for further analysis.                                                                                                                                                  |
 
 
 ### Preface
