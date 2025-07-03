@@ -12,13 +12,13 @@ theme = 'hello-friend-ng'
   showLanguageSelector = false
   enableSharingButtons = true
   images = [""]
-  homeSubtitle = "Malware Research & more"
+  homeSubtitle = "Red Team, Malware Research & more"
   
   portrait = { path = "/images/logoTwitter.png", alt = "My Portrait", maxWidth = "auto" }
 
 [[params.social]]
-  name = "twitter"
-  url = "https://x.com/8erg_"
+  name = "github"
+  url = "https://github.com/8erg"
 [[params.social]]
   name = "/images/logoTwitter.png"
   url = "https://malware-chronicles.beehiiv.com/"
@@ -26,7 +26,8 @@ theme = 'hello-friend-ng'
 [languages]
   [languages.en]
     title = "Cybesecurity Research Blog "
-    owner = ""
+  [languages.en.params]
+    owner = "8erg"
     keywords = ""
     copyright = ""
     menuMore = "Show more"
