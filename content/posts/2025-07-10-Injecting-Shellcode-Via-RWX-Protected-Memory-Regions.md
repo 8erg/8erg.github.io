@@ -4,12 +4,12 @@ date = 2025-07-10
 draft = false
 +++
 
+>⚠️ Be ready to be disappointed...
 
 ## 1. PREFACE
 So I've been doing some couples of malware academy modules and reverse engineering malwares, but i've never tried to officially bypass windows defender and inject a shellcode. So, I’ve been trying a simple defense evasion technique for windows defender by enumerating processes with a RWX Protected memory region to inject my sliver beacon combined with XOR encryption. One point to note is that, even though it bypasses windows defender antivirus, that doesn't mean that it does not leave other IOC's and to apply this in a real world scenario would require additional stealth features. In this blog, I'll talk about my successes and challenges.
 
 
->⚠️ Be ready to be disappointed...
 
 
 ---
