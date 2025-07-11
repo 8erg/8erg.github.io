@@ -6,14 +6,16 @@ draft = false
 
 
 ## 1. PREFACE
-So I've been doing some couples of malware academy modules and reverse engineering malwares, but i've never tried to officially bypass windows defender and inject a shellcode. So, I’ve been trying a simple defense evasion technique for windows defender by enumerating processes with a RWX Protected memory region to inject my sliver beacon combined with XOR encryption. One point to note is that, even though it bypasses windows defender antivirus, that doesn't mean that it does not leave other IOC's and to apply this in a real world scenario would require additional stealth features. In this blog, I'll talk about my "successes..." and challenges.
-
-⚠️ Be ready to be disappointed...
-
-
 ---
 
+So I've been doing some couples of malware academy modules and reverse engineering malwares, but i've never tried to officially bypass windows defender and inject a shellcode. So, I’ve been trying a simple defense evasion technique for windows defender by enumerating processes with a RWX Protected memory region to inject my sliver beacon combined with XOR encryption. One point to note is that, even though it bypasses windows defender antivirus, that doesn't mean that it does not leave other IOC's and to apply this in a real world scenario would require additional stealth features. In this blog, I'll talk about my "successes..." and challenges.
+
+
+⚠️ `Be ready to be disappointed...`
+
+
 ## 2. SETUP
+---
 
 #### SETTING UP SLIVER C2 ON KALI
 
@@ -35,9 +37,8 @@ So I've been doing some couples of malware academy modules and reverse engineeri
 2. Make sure windows defender is up to date and activated
 
 
----
-
 ## 3. Development
+---
 
 1. Enumerating the processes
 2. If we're able to open the process, we'll have query inside it's memory to find a memory section with RWX
@@ -45,9 +46,9 @@ So I've been doing some couples of malware academy modules and reverse engineeri
 4. We should get a reverse shell connection back to our `Slvier C2` if everything went well (sadly we don't😢)
 
 
----
 
 ## Problems encountered
+---
 
 - My payload kept getting injected into `SearchApp.exe` which is only used when performing searches and by looking at the process inside `System Informer` formerly known as `Process Hacker`, I could see that the process is almost always in a suspended state, unless i perform searches on the host, so i thought that was the problem
 
@@ -84,8 +85,7 @@ So I've been doing some couples of malware academy modules and reverse engineeri
 {{< image src="/images/Pasted image 20250624141138.png" alt="20250624141138" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
 
 
----
-
 ### 3. Conclusion
+---
 
 To conclude, even though this gets undected by the windows defender antivirus, it still would get detected by an EDR and this angle is not stable enough. What i mean by that, is that since we're overwritting a section of memory that has the RWX Protected Memory Region, i can deduce that the app crashes because we might be overwritting a critical section of the process that is needed to make the process run smoothly. Also, if you see an app crash, this could potentially lead your malware to be discovered which is no good. This type of defense evasion is a good learning experience, but to apply this into a real world scenario would require additionnal tweaks or a different approach.
