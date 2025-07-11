@@ -4,12 +4,11 @@ date = 2025-07-10
 draft = false
 +++
 
->⚠️ Be ready to be disappointed...
 
 ## 1. PREFACE
-So I've been doing some couples of malware academy modules and reverse engineering malwares, but i've never tried to officially bypass windows defender and inject a shellcode. So, I’ve been trying a simple defense evasion technique for windows defender by enumerating processes with a RWX Protected memory region to inject my sliver beacon combined with XOR encryption. One point to note is that, even though it bypasses windows defender antivirus, that doesn't mean that it does not leave other IOC's and to apply this in a real world scenario would require additional stealth features. In this blog, I'll talk about my successes and challenges.
+So I've been doing some couples of malware academy modules and reverse engineering malwares, but i've never tried to officially bypass windows defender and inject a shellcode. So, I’ve been trying a simple defense evasion technique for windows defender by enumerating processes with a RWX Protected memory region to inject my sliver beacon combined with XOR encryption. One point to note is that, even though it bypasses windows defender antivirus, that doesn't mean that it does not leave other IOC's and to apply this in a real world scenario would require additional stealth features. In this blog, I'll talk about my "successes..." and challenges.
 
-
+⚠️ Be ready to be disappointed...
 
 
 ---
@@ -35,6 +34,7 @@ So I've been doing some couples of malware academy modules and reverse engineeri
 1. Install Windows on a VM
 2. Make sure windows defender is up to date and activated
 
+
 ---
 
 ## 3. Development
@@ -43,6 +43,7 @@ So I've been doing some couples of malware academy modules and reverse engineeri
 2. If we're able to open the process, we'll have query inside it's memory to find a memory section with RWX
 3. Once we find it we will decrypt and inject the shellcode inside that memory region and then start a thread starting from that section
 4. We should get a reverse shell connection back to our `Slvier C2` if everything went well (sadly we don't😢)
+
 
 ---
 
@@ -81,6 +82,7 @@ So I've been doing some couples of malware academy modules and reverse engineeri
 - So, I tried a bunch of different things, but always ended up at the same result, but, at least the good news is that I was able to bypass windows defender, right? We have to stay positive in this field, count them small wins...
 
 {{< image src="/images/Pasted image 20250624141138.png" alt="20250624141138" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
+
 
 ---
 
