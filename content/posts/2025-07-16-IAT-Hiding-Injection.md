@@ -79,7 +79,7 @@ I want to mention that even though my executable gets undetected by windows, the
 
 {{< image src="/images/Pasted image 20250716020625.png" alt="20250716020625" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
 
-+ You might be wondering why do we see 2 connetion one from port `8443` and one from port `8888`, it's because the first is the connection from the stager and then the last one is the connection that will be used by the beacon
++ You might be wondering why do we see 2 connetion one from port `8443` and one from port `8888`, it's because the first is the connection from the stager and then the last one is the connection that will be used by the beacon, which checks in every 5 seconds
 
 
 ### Being a dummy
