@@ -52,7 +52,6 @@ You can checkout the source code on my [Github](https://github.com/8erg/WinBypas
 
 
 ### Why it's not detected
----
 
 {{< image src="/images/Pasted image 20250715032601.png" alt="20250715032601" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
 
@@ -66,7 +65,6 @@ You can checkout the source code on my [Github](https://github.com/8erg/WinBypas
 
 
 ### Possible IOCs
----
 
 I want to mention that even though my executable gets undetected by windows, there's other possible indicators of compromise (IOCs)
 
@@ -93,7 +91,7 @@ I want to mention that even though my executable gets undetected by windows, the
 + but i was able to remediate this problem by slightly modifying the execution workflow and injecting into a different process
 
 
-### 3. Conclusion
+### 4. Conclusion
 ---
 
 Honestly, i've had a lot of fun with this one and I was able to also better understand a malware that I was reverse engineered a couple months ago, which i've yet to release a post about it, they were using some API hashing to evade detection. Guys, that's why I say if you want to become a better offensive operator you need to learn `REVERSE ENGINEERING` i think it's mendatory and it think it comes many different forms, but that's just my personal opinion, I still suck btw (just putting it out there😂). My next steps would probably be to try and remove as much iocs as i can, by patching `ETW` and trying the `SysWhisperer` to make syscall directly. But first, I want to try the `armory`...
