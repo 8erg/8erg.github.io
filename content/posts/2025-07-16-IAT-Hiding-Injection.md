@@ -17,7 +17,7 @@ So, I decided to combine a couple of techniques (I got it from `maldev academy` 
 
 And i got to say getting that notification of my beacon while having my executable undetected on the target machine was a good feeling.
 
-{{< image src="/images/Pasted image 20250716022846.png" alt="20250716022846" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
+{{< image src="/images/poc6.png" alt="poc6" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
 
 
 ## 2. SETUP
@@ -44,11 +44,11 @@ So by combining these different approach into one, I was able to get my executab
 
 You can checkout the source code on my [Github](https://github.com/8erg/WinBypassIAT)
 
-{{< image src="/images/Pasted image 20250716021847.png" alt="20250716021847" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
+{{< image src="/images/poc3.png" alt="poc3" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
 
-{{< image src="/images/Pasted image 20250716020604.png" alt="20250716020604" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
+{{< image src="/images/poc4.png" alt="poc4" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
 
-`I will mention it later in this post, but having outbound connection coming from explorer.exe is a major red flag`
+You might be wondering why do we see 2 connetion one from port `8443` and one from port `8888`, it's because the first is the connection from the stager and then the last one is the connection that will be used by the beacon, which checks in every 5 seconds
 
 
 ### Why it's not detected
@@ -76,10 +76,6 @@ I want to mention that even though my executable gets undetected by windows, the
 {{< image src="/images/Pasted image 20250715032748.png" alt="20250715032748" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
 
 {{< image src="/images/Pasted image 20250715035835.png" alt="20250715035835" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
-
-{{< image src="/images/Pasted image 20250716020625.png" alt="20250716020625" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
-
-+ You might be wondering why do we see 2 connetion one from port `8443` and one from port `8888`, it's because the first is the connection from the stager and then the last one is the connection that will be used by the beacon, which checks in every 5 seconds
 
 
 ### Being a dummy
