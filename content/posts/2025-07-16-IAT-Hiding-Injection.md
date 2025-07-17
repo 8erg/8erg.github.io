@@ -26,7 +26,7 @@ And i got to say getting that notification of my beacon while having my executab
 For the setup of `Sliver C2` you can check out my earlier blog post [here](https://8erg.github.io/posts/2025-07-10-injecting-shellcode-via-rwx-protected-memory-regions/)
 
 
-## Walkthrough
+## 3. Walkthrough
 ---
 
 So first, I tried implementing my custom function of `GetProcAddress` and `GetModuleHandle`, there's some resource on how to do this in `maldev academy`.
@@ -51,7 +51,7 @@ You can checkout the source code on my [Github](https://github.com/8erg/WinBypas
 `I will mention it later in this post, but having outbound connection coming from explorer.exe is a major red flag`
 
 
-## Why it's not detected
+### Why it's not detected
 ---
 
 {{< image src="/images/Pasted image 20250715032601.png" alt="20250715032601" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
@@ -65,7 +65,7 @@ You can checkout the source code on my [Github](https://github.com/8erg/WinBypas
 + None of my API calls are reflected in the import address table, it would be also a plus to add dummy function implementation to camouflage my behavior a little bit more
 
 
-## Possible IOCs
+### Possible IOCs
 ---
 
 I want to mention that even though my executable gets undetected by windows, there's other possible indicators of compromise (IOCs)
@@ -84,7 +84,7 @@ I want to mention that even though my executable gets undetected by windows, the
 + You might be wondering why do we see 2 connetion one from port `8443` and one from port `8888`, it's because the first is the connection from the stager and then the last one is the connection that will be used by the beacon
 
 
-## Being a dummy
+### Being a dummy
 
 `Of course i can't leave this section out`
 
