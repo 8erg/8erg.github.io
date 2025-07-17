@@ -8,7 +8,7 @@ draft = false
 ## 1. PREFACE
 ---
 
-So last week I tried to bypass windows defender and injecting my obfuscated stager to drop my `Sliver C2` beacon but failed miserably. My executable was undetectable, but the process where I was injecting my shellcode kept crashing so I had to take an other path. 
+So last week I tried to bypass windows defender and inject my obfuscated stager to drop my `Sliver C2` beacon but failed miserably. My executable was undetectable, but the process where I was injecting my shellcode kept crashing so I had to take an other path. 
 
 So, I decided to combine a couple of techniques (I got it from `maldev academy` and also some malware that I've reversed engineers) such as :
 - IAT Hiding and Obfuscation
@@ -40,7 +40,7 @@ Then i tried to identified which API calls I wanted to call `NT*`, since it's un
 
 But then, I said to myself even if I've implemented, if i just paste the string of the functions i want to use, it will easily gets detected, so i decided to implement some API hashing, which I've seen being used in one of the malware I've tried (the key word, here, is tried😂) to reverse engineered `Qakbot web injector`. 
 
-So by combining these different approach into one, I was able to get my executable undetected by windows
+So by combining these different approach into one, I was able to get my executable undetected by windows. I also want to mention that you can get creative with these methods, you could call other function and mix it other techniques to improve the stealthiness
 
 You can checkout the source code on my [Github](https://github.com/8erg/WinBypassIAT)
 
@@ -94,4 +94,4 @@ I want to mention that even though my executable gets undetected by windows, the
 ### 4. Conclusion
 ---
 
-Honestly, i've had a lot of fun with this one and I was able to also better understand a malware that I was reverse engineered a couple months ago, which i've yet to release a post about it, they were using some API hashing to evade detection. Guys, that's why I say if you want to become a better offensive operator you need to learn `REVERSE ENGINEERING` i think it's mendatory and it think it comes many different forms, but that's just my personal opinion, I still suck btw (just putting it out there😂). My next steps would probably be to try and remove as much iocs as i can, by patching `ETW` and trying the `SysWhisperer` to make syscall directly. But first, I want to try the `armory`...
+Honestly, i've had a lot of fun with this one and I was able to also better understand a malware that I was reverse engineered a couple months ago, which i've yet to release a post about it, they were using some API hashing to evade detection. Guys, that's why I say if you want to become a better offensive operator you need to learn `REVERSE ENGINEERING` i think it's mendatory and it think it comes in many different forms, but that's just my personal opinion, I still suck btw (just putting it out there😂). My next steps would probably be to try and remove as much iocs as i can, by patching `ETW` and trying the `SysWhisperer` to make syscall directly. But first, I want to try the `armory`...
