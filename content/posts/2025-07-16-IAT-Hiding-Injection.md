@@ -17,7 +17,7 @@ So, I decided to combine a couple of techniques (I got it from `maldev academy` 
 
 And i got to say getting that notification of my beacon while having my executable undetected on the target machine was a good feeling.
 
-{{< image src="/images/poc6.png" alt="poc6" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
+{{< image src="/images/poc1.png" alt="poc1" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
 
 
 ## 2. SETUP
