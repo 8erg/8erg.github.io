@@ -38,7 +38,7 @@ If an application load modules by specifying only their name instead of their fu
 
 ### Why all these definitions?
 
-You might be asking why all these definitions, simply because to understand how `DLL` Proxying works you need to grasp these little core concepts. Basically, it performs a `DLL` hijacking, but we're able to redirect the legit exported functions to the legit `DLL` so we don't break the functionality of the process and the same time we can execute our malicious code.
+You might be asking why all these definitions, simply because to understand how `DLL` Proxying works you need to grasp these little core concepts. Basically, it performs a `DLL` hijacking, but we're able to redirect the legit exported functions to the legit `DLL` so we don't break the functionality of the process and at the same time we can execute our malicious code.
 
 >⚠️ |
 >You could still slow down the process while loading the `DLL` so it's recommended to perform
