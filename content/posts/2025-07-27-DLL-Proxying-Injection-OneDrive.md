@@ -50,6 +50,10 @@ You might be asking why all these definitions, simply because to understand how 
 ## 3. Walkthrough
 ---
 
+
+>⚠️ | 
+> I want to mention that I'm using 2 windows machine (FlareVM & victim) and i've installed OneDrive on FlareVm with `ninite` so the executable is stored `C:\Program Files\Microsoft OneDrive\` but usually it would be located somewhere in `C:\Users\<user>\AppData\Local\Microsoft\OneDrive` where data and settings for individual user are stored
+
 ### Finding the executable and the DLL
 
 + Select an executable to perform the attack
