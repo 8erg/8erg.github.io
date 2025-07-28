@@ -61,7 +61,7 @@ You might be asking why all these definitions, simply because to understand how 
 
 + We can see that `secur32.dll` is being loaded from `C:\Windows\System32` so let's see what happens if we put one in the same directory as the executable
 
-+ I've written a custom temporary `secur32.dll` that will execute a message box and i've copied and renamed the original `secur32.dll` to `securr32.dll` to be able to redirect the original implementation of `GetUsernameEx`
++ I've written a custom temporary `secur32.dll` that will execute a message box and i've copied and renamed the original `secur32.dll` to `securr32.dll` to be able to redirect the original implementation of `GetUsernameExW`
 
 {{< image src="/images/Pasted image 20250725202240.png" alt="20250725202240" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
 
@@ -90,10 +90,10 @@ You might be asking why all these definitions, simply because to understand how 
 
 ### Writing our malicious implementation
 
-So as i previously was able to bypass windows defender with combining different techniques such as ((IAT Hiding & Obfuscation, NT API Hashing) so why change something that works?
+So as i previously was able to bypass windows defender with combining different techniques such as (IAT Hiding & Obfuscation, NT API Hashing) so why change something that works?
 
-+ 👉 You can checkout the code [here](https://github.com/8erg/WinBypassIAT)
-+ 👉 You can checkout the blog and walkthrough [here](https://8erg.github.io/posts/2025-07-16-iat-hiding-injection/)
++ You can checkout the code [here](https://github.com/8erg/WinBypassIAT)
++ You can checkout the blog and walkthrough [here](https://8erg.github.io/posts/2025-07-16-iat-hiding-injection/)
 
 I adapt it for the `DLL` and i still hardcode the process ID, sorry...😅
 
