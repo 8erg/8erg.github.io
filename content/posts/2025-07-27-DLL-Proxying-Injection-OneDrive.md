@@ -33,18 +33,18 @@ When a process is started it will start searching for the necessary `DLL` in the
 
 If an application load modules by specifying only their name instead of their full path and the `DLL` is not present in the first search candidate, it will try other directories and that's how an attacker could force the application to load his malicious `DLL` instead of the original one.
 
->[!warning]
+>⚠️|
 >The problem with this is that the original exported functions of the original `DLL` will not be available/present which could break some essential functionality of the running process, which is not very good
 
 ### Why all these definitions?
 
 You might be asking why all these definitions, simply because to understand how `DLL` Proxying works you need to grasp these little core concepts. Basically, it performs a `DLL` hijacking, but we're able to redirect the legit exported functions to the legit `DLL` so we don't break the functionality of the process and the same time we can execute our malicious code.
 
->[!warning]
->You could still slow down the process loading the `DLL` so it's recommended to perform
+>⚠️|
+>You could still slow down the process while loading the `DLL` so it's recommended to perform
 >+ `Remote Process Injection`
 >+ `Remote Thread Creation`
->+ `Thread Hijack
+>+ `Thread Hijack`
 
 
 ## 3. Walkthrough
@@ -59,31 +59,29 @@ You might be asking why all these definitions, simply because to understand how 
 
 {{< image src="/images/Pasted image 20250725200148.png" alt="20250725200148" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
 
-+ We can see that `secur32.dll` is being loaded from `C:\Windows\System32` so let's see if we put one in the same directory as the executable
++ We can see that `secur32.dll` is being loaded from `C:\Windows\System32` so let's see what happens if we put one in the same directory as the executable
 
-+ Writing a custom temporary `secur32.dll`
++ I've written a custom temporary `secur32.dll` that will execute a message box and i've copied and renamed the original `secur32.dll` to `securr32.dll` to be able to redirect the original implementation of `GetUsernameEx`
 
 {{< image src="/images/Pasted image 20250725202240.png" alt="20250725202240" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
 
 {{< image src="/images/Pasted image 20250725202530.png" alt="20250725202530" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
 
-+ This way `dll` is not that good because i had to copy is not by default in the same folder as `onedrive.exe` it would be better to identify another `dll` that is besides other `dll` to better camouflage
-+ Because as you see it i had to rename the `secur32.dll` to `securr32.dll` to proxy the execution from my malicious `dll`
++ That executable is not a good one because we need other dll in the directory of the executable so we can provide some camouflage and as we can see the directory is pretty empty
 
-+ So what i did is that I moved the `onedrive.exe` to another folder to see how it would go about finding `dll` that it needs
-+ But now I'm just going to go for the `OneDriveServiceUpdater.exe`, but one thing to note is that on every version there's a new folder being created inside `Microsoft Onedrive` so on a new version they will be a new folder with a new version of `OneDriveServiceUpdater.exe`, so in a real world scenario it would be good to check the registry to know which folder we would have to drop our `dll` into
++ I decided to go for the `OneDriveServiceUpdater.exe`, but one thing to note is that on every version there's a new folder being created inside `Microsoft Onedrive` folder so on a new version they will be a new folder with a new version of `OneDriveServiceUpdater.exe`, so in a real world scenario it would be good to check the registry to know which folder we would have to drop our `dll` into
 
 {{< image src="/images/Pasted image 20250726030951.png" alt="20250726030951" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
 
-+ basically i would have to read this registry in order to know in what folder i should drop it and also probably to move itself for persistence, if we ever need to inject the stager beacon again, but for now, we'll drop it manually
++ I would have to read this registry in order to know in what folder i should drop it and also probably to move itself for persistence, if we ever need to inject the stager beacon again, but for now, we'll drop it manually
 
 {{< image src="/images/Pasted image 20250725210512.png" alt="20250725210512" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
 
-+ also there's secur32.dll being needed so we can try our previous proof-of-concept
++ We can also see that there's a `secur32.dll` being imported so we can try our previous proof-of-concept
 
 {{< image src="/images/Pasted image 20250725210411.png" alt="20250725210411" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
 
-+ so i renamed the real `secur32.dll` to `updater.dll` and my malicious `dll` to `secur32.dll` and I move them into `C:\Program Files\Microsoft OneDrive\25.122.0624.0004` and guys it works
++ so i renamed the real `secur32.dll` to `updater.dll` and my malicious `dll` to `secur32.dll` and I move them into `C:\Program Files\Microsoft OneDrive\25.122.0624.0004` and it works
 
 {{< image src="/images/Pasted image 20250725211358.png" alt="20250725211358" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
 
@@ -95,11 +93,12 @@ You might be asking why all these definitions, simply because to understand how 
 So as i previously was able to bypass windows defender with combining different techniques such as ((IAT Hiding & Obfuscation, NT API Hashing) so why change something that works?
 
 👉 You can checkout the code [here](https://github.com/8erg/WinBypassIAT)
+<br>
 👉 You can checkout the blog and walkthrough [here](https://8erg.github.io/posts/2025-07-16-iat-hiding-injection/)
 
-I adapt it for the `DLL` and i still hardcode the process ID
+I adapt it for the `DLL` and i still hardcode the process ID, sorry...😅
 
->[!warning]
+>⚠️|
 >Disable precompiled headers if you remove `pch.h`, if you deleted it
 
 ### Dropping our malicious DLL
@@ -109,18 +108,18 @@ I adapt it for the `DLL` and i still hardcode the process ID
 - Dropping both of these inside the folder containing `OneDriveUpdaterService.exe`
 - Watch the magic unfold
 
->[!info]
->You will probably ask me why i dropped here, simple because it's more crowded, since there's a lot of `dll` our own get some camouflage
+>ℹ️ |
+>You will probably ask me why i dropped here, simple because it's more crowded, since there's a lot of `DLL` our own get some camouflage
 
 {{< image src="/images/Pasted image 20250725223707.png" alt="20250725223707" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
 
 {{< image src="/images/Pasted image 20250725224028.png" alt="20250725224028" position="center" style="border-radius: 6px; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto" >}}
 
-Even after running the execution flow, the malicious is not detected by windows defender  compared to before where it would get detected after executing the payload and running Microsoft defender scan
+Even after running the execution flow, the malicious execution is not detected by windows defender compared to before where it would get detected after executing the payload and running Microsoft defender scan
 
 [UPDATE]
 
->[!Success] Yeah!
+>✅ Yeah! |
 I recently learned that i could just directly reference the `secur32.dll` from the system directories, so no need the renamed the original `dll` move it there and...Anyway no need to do all that anymore🤗
 
 *So now we go from this*
