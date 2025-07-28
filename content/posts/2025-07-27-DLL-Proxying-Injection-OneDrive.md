@@ -33,14 +33,14 @@ When a process is started it will start searching for the necessary `DLL` in the
 
 If an application load modules by specifying only their name instead of their full path and the `DLL` is not present in the first search candidate, it will try other directories and that's how an attacker could force the application to load his malicious `DLL` instead of the original one.
 
->⚠️|
+>⚠️ |
 >The problem with this is that the original exported functions of the original `DLL` will not be available/present which could break some essential functionality of the running process, which is not very good
 
 ### Why all these definitions?
 
 You might be asking why all these definitions, simply because to understand how `DLL` Proxying works you need to grasp these little core concepts. Basically, it performs a `DLL` hijacking, but we're able to redirect the legit exported functions to the legit `DLL` so we don't break the functionality of the process and the same time we can execute our malicious code.
 
->⚠️|
+>⚠️ |
 >You could still slow down the process while loading the `DLL` so it's recommended to perform
 >+ `Remote Process Injection`
 >+ `Remote Thread Creation`
@@ -92,13 +92,12 @@ You might be asking why all these definitions, simply because to understand how 
 
 So as i previously was able to bypass windows defender with combining different techniques such as ((IAT Hiding & Obfuscation, NT API Hashing) so why change something that works?
 
-👉 You can checkout the code [here](https://github.com/8erg/WinBypassIAT)
-<br>
-👉 You can checkout the blog and walkthrough [here](https://8erg.github.io/posts/2025-07-16-iat-hiding-injection/)
++ 👉 You can checkout the code [here](https://github.com/8erg/WinBypassIAT)
++ 👉 You can checkout the blog and walkthrough [here](https://8erg.github.io/posts/2025-07-16-iat-hiding-injection/)
 
 I adapt it for the `DLL` and i still hardcode the process ID, sorry...😅
 
->⚠️|
+>⚠️ |
 >Disable precompiled headers if you remove `pch.h`, if you deleted it
 
 ### Dropping our malicious DLL
